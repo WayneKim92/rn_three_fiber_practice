@@ -2,7 +2,7 @@ import React, { Suspense, useEffect, useRef, useState } from 'react';
 import { Button, DeviceEventEmitter, View } from 'react-native';
 import { Canvas, useThree, useFrame } from '@react-three/fiber/native';
 import { Box, useGLTF } from '@react-three/drei/native';
-import burgerModelPath from '../assets/glbs/burger.glb';
+import burgerModelPath from '@assets/glbs/burger.glb';
 
 import type { GLTF } from 'three-stdlib/loaders/GLTFLoader';
 import type { Mesh } from 'three';

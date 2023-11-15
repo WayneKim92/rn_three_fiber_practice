@@ -1,8 +1,10 @@
 {
   "extends": "@tsconfig/react-native/tsconfig.json",
   "compilerOptions": {
-    "moduleDetection": "legacy",
+    "baseUrl": ".",
     "paths": {
+      "@assets/*": ["./src/assets/*"],
+      "@/*": ["./src"]
     }
   },
 }
