@@ -27,7 +27,10 @@ function Burger({ position }: { position: Position }) {
       burger.scene.rotation.y += 0.3;
       burger.scene.position.y += 0.3;
     } else {
-      burger.scene.rotation.y += 0.03;
+      burger.scene.rotation.x += Math.sin(state.clock.elapsedTime) * 0.03;
+      burger.scene.rotation.z += Math.sin(state.clock.elapsedTime) * 0.03;
+      burger.scene.rotation.y += Math.sin(state.clock.elapsedTime) * 0.03;
+
       burger.scene.position.y += Math.sin(state.clock.elapsedTime) * 0.03;
     }
   });

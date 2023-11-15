@@ -1,5 +1,5 @@
 import { LogBox } from 'react-native';
-import MyFirstThree from './src/examples/MyFirstThree';
+import Geometries from './src/examples/Geometries';
 
 // Ignore log notification by message:
 LogBox.ignoreLogs([
@@ -7,7 +7,7 @@ LogBox.ignoreLogs([
 ]);
 
 function App(): JSX.Element {
-  return <MyFirstThree />;
+  return <Geometries />;
 }
 
 export default App;
