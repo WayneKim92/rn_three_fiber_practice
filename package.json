@@ -4,7 +4,8 @@
   "private": true,
   "scripts": {
     "android": "react-native run-android",
-    "ios": "react-native run-ios",
+    "ios 실행 관련": "#시뮬레이터에서 실행 할 수 없어서, Xcode에서 MyMac을 선택하고 실행해야함",
+    "ios:with-mac-app": "cd ios &&  open -a Xcode.app rn_three_fiber_practice.xcworkspace",
     "lint": "eslint .",
     "start": "react-native start",
     "test": "jest"
