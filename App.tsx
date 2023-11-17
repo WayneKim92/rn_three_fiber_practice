@@ -1,5 +1,5 @@
 import { LogBox } from 'react-native';
-import ThreeHelper from './src/examples/ThreeHelper';
+import CannonExample from './src/examples/CannonExample';
 
 // Ignore log notification by message:
 LogBox.ignoreLogs([
@@ -7,7 +7,7 @@ LogBox.ignoreLogs([
 ]);
 
 function App(): JSX.Element {
-  return <ThreeHelper />;
+  return <CannonExample />;
 }
 
 export default App;

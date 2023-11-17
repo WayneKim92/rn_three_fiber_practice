@@ -13,6 +13,7 @@
   "dependencies": {
     "@react-three/drei": "^9.88.14",
     "@react-three/fiber": "^8.15.11",
+    "cannon": "^0.6.2",
     "expo": "^49.0.0",
     "expo-gl": "~13.0.1",
     "expo-three-orbitcontrols": "https://github.com/WayneKim92/expo-three-orbit-controls",
@@ -27,6 +28,7 @@
     "@react-native/eslint-config": "^0.72.2",
     "@react-native/metro-config": "^0.72.11",
     "@tsconfig/react-native": "^3.0.0",
+    "@types/cannon": "^0.1.12",
     "@types/react": "^18.0.24",
     "@types/react-test-renderer": "^18.0.0",
     "@types/three": "^0.158.2",
