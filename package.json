@@ -15,8 +15,8 @@
     "@react-three/fiber": "^8.15.11",
     "expo": "^49.0.0",
     "expo-gl": "~13.0.1",
-    "react": "18.2.0",
     "expo-three-orbitcontrols": "https://github.com/WayneKim92/expo-three-orbit-controls",
+    "react": "18.2.0",
     "react-native": "0.72.7",
     "three": "^0.158.0"
   },
