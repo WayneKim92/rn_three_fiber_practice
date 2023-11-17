@@ -1,6 +1,7 @@
 import React, { useRef, useState } from 'react';
 import OrbitControls from 'expo-three-orbitcontrols';
 import { Canvas, useFrame } from '@react-three/fiber/native';
+import { MeshWobbleMaterial, MeshDistortMaterial } from '@react-three/drei';
 
 import type { Mesh, Color, Camera } from 'three';
 
@@ -25,7 +26,8 @@ function Cube({
   return (
     <mesh ref={ref} position={position}>
       <boxGeometry args={size} />
-      <meshStandardMaterial color={'pink'} />
+      <MeshWobbleMaterial color={'pink'} factor={3} />
+      {/*<MeshDistortMaterial color={'pink'} />*/}
     </mesh>
   );
 }
