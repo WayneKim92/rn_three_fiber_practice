@@ -26,8 +26,8 @@ function Cube({
   return (
     <mesh ref={ref} position={position}>
       <boxGeometry args={size} />
-      <MeshWobbleMaterial color={'pink'} factor={3} />
-      {/*<MeshDistortMaterial color={'pink'} />*/}
+      {/*<MeshWobbleMaterial color={'pink'} factor={3} />*/}
+      <MeshDistortMaterial color={'pink'} />
     </mesh>
   );
 }
