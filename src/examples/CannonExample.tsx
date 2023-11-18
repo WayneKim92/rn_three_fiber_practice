@@ -11,7 +11,15 @@ const world = new CANNON.World();
 type Position = [number, number, number];
 type Size = [number, number, number];
 
-function Cube({ position, size }: { position: Position; size: Size }) {
+function Cube({
+  position,
+  size,
+  orbit,
+}: {
+  position: Position;
+  size: Size;
+  orbit?: number;
+}) {
   const ref = useRef<Mesh>();
   const body = useRef<Body>();
 
@@ -22,7 +30,7 @@ function Cube({ position, size }: { position: Position; size: Size }) {
     world.addBody(body.current);
   }, [position, size]);
 
-  useFrame(() => {
+  useFrame(({ clock }) => {
     if (ref.current === undefined) return;
 
     if (body.current) {
@@ -31,6 +39,14 @@ function Cube({ position, size }: { position: Position; size: Size }) {
       ref.current.position.copy(body.current.position);
       // @ts-ignore
       ref.current.quaternion.copy(body.current.quaternion);
+
+      if (orbit) {
+        const radius = orbit; // 원의 반지름
+        const speed = 5; // 움직임의 속도
+        const angle = clock.getElapsedTime() * speed;
+        body.current.position.x = radius * Math.cos(angle);
+        body.current.position.z = radius * Math.sin(angle);
+      }
     }
   });
 
@@ -76,14 +92,9 @@ export default function CannonExample() {
         onCreated={({ camera }) => setCamera(camera)}>
         <ambientLight intensity={0.5} />
         <directionalLight castShadow position={[2.5, 8, 5]} />
+        {/* useFrame은 최대 두개 밖에 못 쓰겠다. JS 쓰레드 만으로는 성능 부족함 */}
+        <Cube position={[0, 1, 0]} size={[1, 1, 1]} orbit={15} />
         <Cube position={[0, 0, 0]} size={[1, 1, 1]} />
-        <Cube position={[0, 0, 1]} size={[1, 1, 1]} />
-        <Cube position={[0, 1, 0]} size={[1, 1, 1]} />
-        <Cube position={[0, 1, 1]} size={[1, 1, 1]} />
-        <Cube position={[1, 0, 0]} size={[1, 1, 1]} />
-        <Cube position={[1, 0, 1]} size={[1, 1, 1]} />
-        <Cube position={[1, 1, 0]} size={[1, 1, 1]} />
-        <Cube position={[1, 1, 1]} size={[1, 1, 1]} />
         <Ground />
       </Canvas>
     </OrbitControls>
